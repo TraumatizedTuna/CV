@@ -70,5 +70,5 @@ for (let key in skills) {
 }
 
 for (let i in portfolio) {
-    portfolio[i].render(portfolioContainer, 'media-card-' + i, 'media');
+    portfolio[i].render(portfolioContainer, 'media-card-' + i, ' media');
 }

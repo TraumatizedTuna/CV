@@ -1,8 +1,26 @@
 main{
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:1rem 2rem;
+}
+.card-container{
+    background-color: gray;
 }
 .card{
-    width: 32rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: .3rem;
+    background-color: aliceblue;
+}
+.card-title{
+    font-size: 1.5rem;
+}
+.card-content{
+    display: flex;
+    flex-direction: column;
+    color: rgb(88, 123, 153);
 }
 
 .selected{
