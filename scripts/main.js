@@ -60,6 +60,9 @@ class MediaCard extends Card {
         if (args.yt) {
             this.content += '<iframe width="560" height="315" src="' + args.yt + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         }
+        if (args.page) {
+            this.content += '<iframe width="560" height="315" src="' + args.page + '"></iframe>';
+        }
 
         for (let s of args.skills) {
             skills[s]?.cards?.push(this);

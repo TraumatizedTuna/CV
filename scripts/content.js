@@ -8,9 +8,6 @@ const skills = {
     }),
     Linux: 'Ubuntu, Red Hat, openSUSE',
     'MacOS': '',
-    Office: new SkillCard({
-        title: 'Microsoft Office'
-    }),
     'Visual Studio': new SkillCard({
         title: 'Microsoft Visual Studio'
     }),
@@ -18,25 +15,24 @@ const skills = {
         title: 'Microsoft Visual Studio Code'
     }),
     'Arduino IDE': '',
-    Blender: '2.5-3.0',
+    Blender: '2.5 - 3.0',
     'After Effects': new SkillCard({
         title: 'Adobe After Effects',
-        description: 'CS5-CC'
+        description: 'CS5 - CC'
     }),
     'Premiere Pro': new SkillCard({
         title: 'Adobe Premiere Pro',
-        description: 'CS5-CC'
+        description: 'CS5 - CC'
     }),
     Photoshop: new SkillCard({
         title: 'Adobe Photoshop',
-        description: 'CS5-CC'
+        description: 'CS5 - CC'
     }),
     Javascript: '',
     HTML: '',
     CSS: '',
     'C#': '',
     Java: '',
-    PHP: '',
     Python: '',
     Haskell: '',
     'C/C++': ''
@@ -54,14 +50,35 @@ for (let key in skills) {
 const portfolio = [
     new MediaCard({
         title: 'Symbiosis',
-        description: '3D art',
+        description: 'Modeled in Blender, rendered in LuxCore, composited in After Effects',
         photo: 'https://lh3.googleusercontent.com/pw/AM-JKLWzuGZ8yD38BT014tra5yIkKRk7I9UVM1jAcTJWAGT-mlpELtbP0jEpfZl6bKFx4g4Pb_f3m3-0QH0noHjrGbMOHmmAwHdbT90BLj8dvOffCf1VsuKsLdi7zvPQ_CgaVzDjVP3OAvoiVNs4P3m0fgkJ=w845-h564-no?authuser=0',
         skills: ['Blender', 'LuxCore', 'After Effects', 'Photoshop', 'Windows']
+    }),
+    new MediaCard({
+        title: 'Calculator',
+        page: 'https://effektgubben.github.io/Calculator/#175%2F7900',
+        skills:['Javascript', 'HTML', 'CSS', 'Visual Studio', 'Visual Studio Code', 'Windows']
     }),
     new MediaCard({
         title: 'Bees in Slow Motion',
         yt: 'https://www.youtube.com/embed/1QB-B42dnNs',
         skills: ['After Effects', 'Windows']
+    }),
+    new MediaCard({
+        title:'What\'s Up?',
+        description:'3D art',
+        photo: 'https://lh3.googleusercontent.com/pw/AM-JKLU36WHzGqGtyD0sL8lIq_dfjbauqJDD24jGLsMeP_Nab2t6s9R0YyW0OGEUbzKcVgPbnvlbCnmubWSCA89HkfgcE7VMtYgttEYo7pnWEJoUVdN-hvvrGkgoSFlqmp6qEF_1NGXzCqJLwkfn-NGfXC7K=w1319-h742-no?authuser=0',
+        skills: ['Blender', 'LuxCore', 'After Effects', 'Photoshop', 'Windows']
+    }),
+    new MediaCard({
+        title: 'The Master Baseball Player',
+        yt: 'https://www.youtube.com/embed/6bBFu3A5DGw',
+        skills: ['After Effects', 'Blender', 'Windows']
+    }),
+    new MediaCard({
+        title: 'Noodle',
+        page: 'https://effektgubben.github.io/Noodle/',
+        skills:['Javascript', 'HTML', 'CSS', 'Visual Studio', 'Visual Studio Code', 'Windows']
     })
 ]
 

@@ -1,28 +1,69 @@
-main{
+*{
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+}
+main {
     width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:1rem 2rem;
+    gap: 1rem 2rem;
+    background-color: rgb(121, 34, 48);
 }
-.card-container{
-    background-color: gray;
+
+#skills {
+    position: fixed;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    gap: .1rem;
+    left: 2rem;
+    height: 100vh;
+    overflow-y:auto;
 }
-.card{
+#portfolio{
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 22rem;
+    margin-right: 2rem;
+}
+.card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: .3rem;
-    background-color: aliceblue;
+    background-color: rgb(25, 16, 58);
+    max-width: 90vw;
+    overflow: hidden;
+    min-height: 2rem;
 }
-.card-title{
+.card.media{
+    flex-direction: column;
+    width: 560px;
+    max-width: 90vw;
+    height: fit-content;
+}
+
+.card.skill:hover{
+    background-color: rgb(90, 44, 65);
+}
+
+.card-title {
+    margin:.5rem
+}
+.media .card-title{
     font-size: 1.5rem;
+
 }
-.card-content{
+
+.card-content {
     display: flex;
     flex-direction: column;
     color: rgb(88, 123, 153);
 }
 
-.selected{
-    background-color: rgb(231, 131, 37);
+.selected {
+    background-color: rgb(255, 142, 66);
 }

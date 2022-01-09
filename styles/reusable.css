@@ -12,7 +12,17 @@
 .cyan{background-color: cyan;}
 .yellow{background-color: yellow;}
 
+.flex-x{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex-y{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
 .hidden{
-    visibility: hidden;
+    display: none;
 }
