@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     color: aliceblue;
 }
+
 main {
     width: 100%;
     min-height: 100vh;
@@ -20,16 +21,18 @@ main {
     flex-wrap: nowrap;
     gap: .1rem;
     left: 2rem;
-    height: 100vh;
-    overflow-y:auto;
+    max-height: 100vh;
+    overflow-y: auto;
 }
-#portfolio{
+
+#portfolio {
     justify-content: center;
     align-items: center;
     gap: 1rem;
     margin-left: 22rem;
     margin-right: 2rem;
 }
+
 .card {
     display: flex;
     flex-direction: row;
@@ -39,21 +42,23 @@ main {
     overflow: hidden;
     min-height: 2rem;
 }
-.card.media{
+
+.card.media {
     flex-direction: column;
     width: 560px;
     max-width: 90vw;
     height: fit-content;
 }
 
-.card.skill:hover{
+.card.skill:hover {
     background-color: rgb(90, 44, 65);
 }
 
 .card-title {
-    margin:.5rem
+    margin: .5rem
 }
-.media .card-title{
+
+.media .card-title {
     font-size: 1.5rem;
 
 }
@@ -62,6 +67,11 @@ main {
     display: flex;
     flex-direction: column;
     color: rgb(88, 123, 153);
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
 }
 
 .selected {

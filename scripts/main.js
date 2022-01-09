@@ -58,10 +58,10 @@ class MediaCard extends Card {
             this.content += '<img src="' + args.photo + '">';
         }
         if (args.yt) {
-            this.content += '<iframe width="560" height="315" src="' + args.yt + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+            this.content += '<iframe src="' + args.yt + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
         }
         if (args.page) {
-            this.content += '<iframe width="560" height="315" src="' + args.page + '"></iframe>';
+            this.content += '<iframe src="' + args.page + '"></iframe>';
         }
 
         for (let s of args.skills) {

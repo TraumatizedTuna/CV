@@ -66,7 +66,6 @@ const portfolio = [
     }),
     new MediaCard({
         title:'What\'s Up?',
-        description:'3D art',
         photo: 'https://lh3.googleusercontent.com/pw/AM-JKLU36WHzGqGtyD0sL8lIq_dfjbauqJDD24jGLsMeP_Nab2t6s9R0YyW0OGEUbzKcVgPbnvlbCnmubWSCA89HkfgcE7VMtYgttEYo7pnWEJoUVdN-hvvrGkgoSFlqmp6qEF_1NGXzCqJLwkfn-NGfXC7K=w1319-h742-no?authuser=0',
         skills: ['Blender', 'LuxCore', 'After Effects', 'Photoshop', 'Windows']
     }),

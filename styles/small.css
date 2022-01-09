@@ -1,0 +1,24 @@
+@media screen and (max-width: 946px) {
+    #skills{
+        position: unset;
+        max-height: 20rem;
+        flex-wrap: wrap;
+        align-content: center;
+        width: 100%;
+    }
+    #portfolio{
+        margin-left: 2rem;
+    }
+}
+@media screen and (max-width: 622px) {
+    
+    iframe{
+        width: 90vw;
+        height:50.625vw;
+    }
+}
+@media screen and (max-width: 530px) {
+    #skills{
+        max-height: none;
+    }
+}
