@@ -4,3 +4,7 @@ main{
 .card{
     width: 32rem;
 }
+
+.selected{
+    background-color: rgb(231, 131, 37);
+}

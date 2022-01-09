@@ -14,10 +14,10 @@ class Card {
         this.html = document.getElementById(id);
         this.html.card = this;
     }
-    hide(){
+    hide() {
         this.html.classList.add('hidden');
     }
-    show(){
+    show() {
         this.html.classList.remove('hidden');
     }
 
@@ -30,14 +30,24 @@ class SkillCard extends Card {
     render(container, id, classes = 'skill') {
         super.render(container, id, classes);
         this.html.addEventListener('click', function () {
-            let card = this.card;
-            for(let mCard of portfolio){
-                mCard.hide();
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                for (let mCard of portfolio) {
+                    mCard.show();
+                }
             }
-            for(let mCard of card.cards){
-                mCard.show();
+            else {
+                //Deselect currently selected
+                document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
+                this.classList.add('selected');
+                for (let mCard of portfolio) {
+                    mCard.hide();
+                }
+                for (let mCard of this.card.cards) {
+                    mCard.show();
+                }
             }
-        })
+        });
     }
 }
 
