@@ -1,7 +1,7 @@
-@media screen and (max-width: 946px) {
+@media screen and (max-width: 990px) {
     #skills{
         position: unset;
-        max-height: 20rem;
+        max-height: 22rem;
         flex-wrap: wrap;
         align-content: center;
         width: 100%;
@@ -17,7 +17,7 @@
         height:50.625vw;
     }
 }
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 600px) {
     #skills{
         max-height: none;
     }

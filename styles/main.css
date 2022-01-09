@@ -11,7 +11,9 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem 2rem;
-    background-color: rgb(121, 34, 48);
+    background-color: rgb(43, 32, 49);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 
 #skills {
@@ -29,7 +31,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin-left: 22rem;
+    margin-left: 24rem;
     margin-right: 2rem;
 }
 
@@ -37,7 +39,7 @@ main {
     display: flex;
     flex-direction: row;
     border-radius: .3rem;
-    background-color: rgb(25, 16, 58);
+    background-color: rgb(21, 20, 37);
     max-width: 90vw;
     overflow: hidden;
     min-height: 2rem;
@@ -48,6 +50,7 @@ main {
     width: 560px;
     max-width: 90vw;
     height: fit-content;
+    box-shadow: .5rem .5rem .2rem rgba(1, 1, 14, 0.151);
 }
 
 .card.skill:hover {
@@ -66,7 +69,14 @@ main {
 .card-content {
     display: flex;
     flex-direction: column;
+}
+.card-description{
+    margin-inline: 1rem;
+    vertical-align: middle;
     color: rgb(88, 123, 153);
+}
+#skills .card-description{
+    padding: .5rem;
 }
 
 iframe {

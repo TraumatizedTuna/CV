@@ -1,13 +1,24 @@
+/**
+ * Class representing a card.
+ */
 class Card {
     constructor(args) {
         this.title = args.title;
-        this.content = args.description || '';
+        this.description = args.description || '';
+        this.content = args.content || '';
         this.cards = [];
     }
+    /**
+     * Render card in container.
+     * @param {Element} container 
+     * @param {String} id 
+     * @param {String} classes 
+     */
     render(container, id, classes = '') {
         container.insertAdjacentHTML('beforeend',
             '<div class="card' + classes + '" id="' + id + '"> ' +
             '   <div class="card-title">' + this.title + '</div>' +
+            '   <div class="card-description">' + this.description + '</div>' +
             '   <div class="card-content">' + this.content + '</div>' +
             '</div>'
         );
@@ -22,11 +33,19 @@ class Card {
     }
 
 }
-
+/**
+ * Class representing a skill card.
+ */
 class SkillCard extends Card {
     constructor(args) {
         super(args);
     }
+    /**
+     * Render skill card in container and add click event to filter portfolio.
+     * @param {Element} container 
+     * @param {String} id 
+     * @param {String} classes 
+     */
     render(container, id, classes = ' skill') {
         super.render(container, id, classes);
         this.html.addEventListener('click', function () {
@@ -50,7 +69,9 @@ class SkillCard extends Card {
         });
     }
 }
-
+/**
+ * Class representing media card (for portfolio)
+ */
 class MediaCard extends Card {
     constructor(args) {
         super(args);
@@ -64,6 +85,7 @@ class MediaCard extends Card {
             this.content += '<iframe src="' + args.page + '"></iframe>';
         }
 
+        //Add this to all related skill cards so they can filter portfolio
         for (let s of args.skills) {
             skills[s]?.cards?.push(this);
         }
