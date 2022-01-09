@@ -1,5 +1,5 @@
-const skillContainer=document.getElementById('skills');
-const portfolioContainer=document.getElementById('portfolio');
+const skillContainer = document.getElementById('skills');
+const portfolioContainer = document.getElementById('portfolio');
 
 const skills = {
     Windows: new SkillCard({
@@ -11,7 +11,7 @@ const skills = {
         description: ''
     }),
     'After Effects': new SkillCard({
-        title: 'After Effects CS5-CC'
+        title: 'Adobe After Effects CS5-CC'
     })
 }
 
@@ -24,15 +24,15 @@ const portfolio = [
     }),
     new MediaCard({
         title: 'Bees in Slow Motion',
-        yt:'https://www.youtube.com/embed/1QB-B42dnNs',
+        yt: 'https://www.youtube.com/embed/1QB-B42dnNs',
         skills: ['After Effects', 'Windows']
     })
 ]
 
-for (let key in skills){
-    skills[key].render(skillContainer);
+for (let key in skills) {
+    skills[key].render(skillContainer, 'skill-card-' + key);
 }
 
-for(let c of portfolio){
-    c.render(portfolioContainer);
+for (let i in portfolio) {
+    portfolio[i].render(portfolioContainer, 'media-card-' + i, 'media');
 }
