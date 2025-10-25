@@ -21,6 +21,14 @@ window.addEventListener('load', function(){
         Blender: '2.5 - 4.5, Fracture Modifier Build',
         LuxCore: '',
         Onshape: '',
+        'Fusion': new SkillCard({
+            title: 'Autodesk Fusion',
+            description: ''
+        }),
+        PrusaSlicer: '',
+        OrcaSlicer: '',
+        Cura: '',
+        Klipper: '',
         'After Effects': new SkillCard({
             title: 'Adobe After Effects',
             description: 'CS5 - CC'
@@ -71,6 +79,11 @@ window.addEventListener('load', function(){
             skills:['Javascript', 'HTML', 'CSS', 'Visual Studio', 'Visual Studio Code', 'Windows']
         }),
         new MediaCard({
+            title: 'Chicken Wheelchair',
+            page: 'https://www.printables.com/embed/1370036',
+            skills:['Fusion', 'PrusaSlicer', 'Klipper', 'Windows']
+        }),
+        new MediaCard({
             title: 'Bees in Slow Motion',
             yt: 'https://www.youtube.com/embed/1QB-B42dnNs',
             skills: ['After Effects', 'Windows']
@@ -81,9 +94,19 @@ window.addEventListener('load', function(){
             skills: ['Blender', 'After Effects', 'Photoshop', 'Windows']
         }),
         new MediaCard({
+            title: 'Steambenchy Willie',
+            page: 'https://www.printables.com/embed/1220653',
+            skills:['Blender', 'PrusaSlicer', 'Klipper', 'Windows']
+        }),
+        new MediaCard({
             title: 'The Master Baseball Player',
             yt: 'https://www.youtube.com/embed/6bBFu3A5DGw',
             skills: ['After Effects', 'Blender', 'Windows']
+        }),
+        new MediaCard({
+            title: '3D Printer Motion System Upgrade',
+            page: 'https://www.printables.com/embed/1230561',
+            skills:['Fusion', 'PrusaSlicer', 'Klipper', 'Windows']
         }),
         new MediaCard({
             title: 'Noodle',
