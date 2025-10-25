@@ -7,7 +7,7 @@ window.addEventListener('load', function(){
     skills = {
         Windows: new SkillCard({
             title: 'Microsoft Windows',
-            description: 'XP, Vista, 7, 8, 8.1, 10'
+            description: 'XP - 11'
         }),
         Linux: 'Ubuntu, Red Hat, openSUSE',
         'MacOS': '',
@@ -48,7 +48,8 @@ window.addEventListener('load', function(){
         Java: '',
         Python: '',
         Haskell: '',
-        'C/C++': ''
+        'C/C++': '',
+        ComfyUI: ''
         
     }
     for (let key in skills) {

@@ -40,7 +40,7 @@ class SkillCard extends Card {
      * Render skill card in container and add click event to filter portfolio.
      * @param {Element} container 
      * @param {String} id 
-     * @param {String} classes 
+     * @param {String} classes
      */
     render(container, id, classes = ' skill') {
         super.render(container, id, classes);
@@ -64,6 +64,14 @@ class SkillCard extends Card {
             }
         });
     }
+    /**
+     * 
+     * @param {Card} card 
+     */
+    add_card(card) {
+        this.cards?.push(card)
+        this.content = `<div class="bubble">${this.cards.length}</div>`
+    }
 }
 /**
  * Class representing media card (for portfolio)
@@ -83,7 +91,7 @@ class MediaCard extends Card {
 
         //Add this to all related skill cards so they can filter portfolio
         for (let s of args.skills) {
-            skills[s]?.cards?.push(this);
+            skills[s]?.add_card(this);
         }
 
     }
