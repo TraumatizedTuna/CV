@@ -10,9 +10,9 @@ class Card {
     }
     /**
      * Render card in container.
-     * @param {Element} container 
-     * @param {String} id 
-     * @param {String} classes 
+     * @param {Element} container
+     * @param {String} id
+     * @param {String} classes
      */
     render(container, id, classes = '') {
         container.insertAdjacentHTML('beforeend',
@@ -25,12 +25,8 @@ class Card {
         this.html = document.getElementById(id);
         this.html.card = this;
     }
-    hide() {
-        this.html.classList.add('hidden');
-    }
-    show() {
-        this.html.classList.remove('hidden');
-    }
+    hide() { this.html.classList.add('hidden'); }
+    show() { this.html.classList.remove('hidden'); }
 
 }
 /**
