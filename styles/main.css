@@ -70,6 +70,11 @@ main {
     display: flex;
     flex-direction: column;
 }
+
+.card-content:has(.bubble) {
+    margin-left: auto;
+}
+
 .card-description{
     margin-inline: 1rem;
     vertical-align: middle;
@@ -89,7 +94,17 @@ iframe {
 }
 
 .bubble {
-    background-color: rgba(236, 179, 146, 0.177);
+    /*border-left: 2px solid rgb(255, 142, 66);
+    */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    background-color: rgba(146, 141, 138, 0.11);
+    color: rgba(81, 68, 104, 0.541);
+    box-shadow: inset 3px 0px 4px rgba(26, 26, 26, 0.288);
+    /*background-color: rgba(236, 179, 146, 0.177);
     color: rgb(189, 182, 122);
     border-radius: 50%;
     width: 1.2rem;
@@ -98,5 +113,5 @@ iframe {
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 1;*/
 }

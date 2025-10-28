@@ -52,22 +52,24 @@ class SkillCard extends Card {
      * Toggle selected state of skill card and filter portfolio accordingly.
      */
     toggle_selected() {
-        if (this.html.classList.contains('selected')) {
-            this.html.classList.remove('selected');
-            for (let mCard of portfolio) {
-                mCard.show();
+        if(this.cards.length) {
+            if (this.html.classList.contains('selected')) {
+                this.html.classList.remove('selected');
+                for (let mCard of portfolio) {
+                    mCard.show();
+                }
             }
-        }
-        else {
-            //Deselect currently selected
-            document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
-            this.html.classList.add('selected');
-            window.location.hash = encodeURIComponent(this.key)
-            for (let mCard of portfolio) {
-                mCard.hide();
-            }
-            for (let mCard of this.cards) {
-                mCard.show();
+            else {
+                //Deselect currently selected
+                document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
+                this.html.classList.add('selected');
+                window.location.hash = encodeURIComponent(this.key)
+                for (let mCard of portfolio) {
+                    mCard.hide();
+                }
+                for (let mCard of this.cards) {
+                    mCard.show();
+                }
             }
         }
     }
