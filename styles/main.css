@@ -78,7 +78,7 @@ main {
 .card-description{
     margin-inline: 1rem;
     vertical-align: middle;
-    color: rgb(88, 123, 153);
+    color: rgba(154, 187, 216, 0.422);
 }
 #skills .card-description{
     padding: .5rem;
@@ -93,25 +93,18 @@ iframe {
     background-color: rgb(255, 142, 66);
 }
 
+.selected .card-description {
+    color: rgba(21, 20, 37, 0.544);
+}
+
 .bubble {
-    /*border-left: 2px solid rgb(255, 142, 66);
-    */
+    border-left: 1px solid rgba(97, 97, 97, 0.078);
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3rem;
-    background-color: rgba(146, 141, 138, 0.11);
-    color: rgba(81, 68, 104, 0.541);
-    box-shadow: inset 3px 0px 4px rgba(26, 26, 26, 0.288);
-    /*background-color: rgba(236, 179, 146, 0.177);
-    color: rgb(189, 182, 122);
-    border-radius: 50%;
-    width: 1.2rem;
-    height: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    line-height: 1;*/
+    width: 2rem;
+    background-color: rgba(130, 126, 124, 0.03);
+    background: linear-gradient(90deg,rgba(10, 10, 10, 0.2) 0%, rgba(87, 85, 83, 0) 50%);
+    color: rgba(106, 99, 116, 0.37);
 }
