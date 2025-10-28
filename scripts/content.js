@@ -121,11 +121,18 @@ window.addEventListener('load', function(){
         })
     ]
     
+    
     for (let key in skills) {
         skills[key].render(skillContainer, 'skill-card-' + key);
+        skills[key].key = key; //TODO: Is this really how we wanna do things?
     }
     
     for (let i in portfolio) {
         portfolio[i].render(portfolioContainer, 'media-card-' + i, ' media');
+    }
+
+    let hash = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+    if(skills[hash]) {
+        skills[hash].toggle_selected();
     }
 });

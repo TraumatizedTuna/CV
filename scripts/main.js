@@ -45,24 +45,31 @@ class SkillCard extends Card {
     render(container, id, classes = ' skill') {
         super.render(container, id, classes);
         this.html.addEventListener('click', function () {
-            if (this.classList.contains('selected')) {
-                this.classList.remove('selected');
-                for (let mCard of portfolio) {
-                    mCard.show();
-                }
-            }
-            else {
-                //Deselect currently selected
-                document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
-                this.classList.add('selected');
-                for (let mCard of portfolio) {
-                    mCard.hide();
-                }
-                for (let mCard of this.card.cards) {
-                    mCard.show();
-                }
-            }
+            this.card.toggle_selected();
         });
+    }
+    /**
+     * Toggle selected state of skill card and filter portfolio accordingly.
+     */
+    toggle_selected() {
+        if (this.html.classList.contains('selected')) {
+            this.html.classList.remove('selected');
+            for (let mCard of portfolio) {
+                mCard.show();
+            }
+        }
+        else {
+            //Deselect currently selected
+            document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
+            this.html.classList.add('selected');
+            window.location.hash = encodeURIComponent(this.key)
+            for (let mCard of portfolio) {
+                mCard.hide();
+            }
+            for (let mCard of this.cards) {
+                mCard.show();
+            }
+        }
     }
     /**
      * 
