@@ -18,9 +18,10 @@ window.addEventListener('load', function(){
             title: 'Microsoft Visual Studio Code'
         }),
         'Arduino IDE': '',
-        Blender: '2.5 - 4.5, Fracture Modifier Build',
+        Blender: '2.5 - 5.2, Fracture Modifier Build',
         LuxCore: '',
         Onshape: '',
+        FreeCAD: '',
         'Fusion': new SkillCard({
             title: 'Autodesk Fusion',
             description: ''
@@ -29,6 +30,7 @@ window.addEventListener('load', function(){
         OrcaSlicer: '',
         Cura: '',
         Klipper: '',
+        Gimp: '',
         'After Effects': new SkillCard({
             title: 'Adobe After Effects',
             description: 'CS5 - CC'
