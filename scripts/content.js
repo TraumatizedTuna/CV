@@ -6,11 +6,11 @@ let skills, portfolio;
 window.addEventListener('load', function(){
 
     skills = {
+        Linux: 'Kinoite, CachyOS, Ubuntu, Mint',
         Windows: new SkillCard({
             title: 'Microsoft Windows',
             description: 'XP - 11'
         }),
-        Linux: 'Ubuntu, Red Hat, openSUSE',
         'MacOS': '',
         'Visual Studio': new SkillCard({
             title: 'Microsoft Visual Studio'
@@ -20,9 +20,10 @@ window.addEventListener('load', function(){
             tags: ['Code']
         }),
         'Arduino IDE': '',
-        Blender: '2.5 - 4.5, Fracture Modifier Build',
+        Blender: '2.5 - 5.2, Fracture Modifier Build',
         LuxCore: '',
         Onshape: '',
+        FreeCAD: '',
         'Fusion': new SkillCard({
             title: 'Autodesk Fusion',
             description: '',
@@ -48,6 +49,7 @@ window.addEventListener('load', function(){
             description: '',
             tags: ['3D']
         }),
+        Gimp: '',
         'After Effects': new SkillCard({
             title: 'Adobe After Effects',
             description: 'CS5 - CC'
@@ -75,9 +77,7 @@ window.addEventListener('load', function(){
         Java: '',
         Python: '',
         Haskell: '',
-        'C/C++': '',
-        ComfyUI: ''
-        
+        'C/C++': ''
     }
     cardify_dict(skills, SkillCard);
     
@@ -128,6 +128,12 @@ window.addEventListener('load', function(){
             title: '3D Printer Motion System Upgrade',
             page: 'https://www.printables.com/embed/1230561',
             skills:['Fusion', 'PrusaSlicer', 'Klipper', 'Windows']
+        }),
+        new MediaCard({
+            title: 'Hairy Skull',
+            page: 'https://cults3d.com/en/3d-model/art/hairy-skull-traumatizedtuna',
+            fallback: 'https://fbi.cults3d.com/uploaders/31669962/illustration-file/62378394-c37a-4761-ab60-fb4aa808f8fd/IMG_7773.jpg',
+            skills:['Blender', 'OrcaSlicer', 'Klipper', 'Windows']
         }),
         new MediaCard({
             title: 'Noodle',
