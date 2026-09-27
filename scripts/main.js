@@ -105,3 +105,19 @@ class MediaCard extends Card {
 
     }
 }
+
+/**
+ * Iterate through dictionary and convert string values to Card objects.
+ * @param {Object} dict
+ * @param {Class} card_class
+ */
+function cardify_dict(dict, card_class) {
+    for (let key in dict) {
+        if (typeof dict[key] === 'string') {
+            dict[key] = new card_class({
+                title: key,
+                description: skills[key]
+            });
+        }
+    }
+}

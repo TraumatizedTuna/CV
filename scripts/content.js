@@ -1,5 +1,6 @@
 const skillContainer = document.getElementById('skills');
 const portfolioContainer = document.getElementById('portfolio');
+let tags = {}
 let skills, portfolio;
 
 window.addEventListener('load', function(){
@@ -15,7 +16,8 @@ window.addEventListener('load', function(){
             title: 'Microsoft Visual Studio'
         }),
         'Visual Studio Code': new SkillCard({
-            title: 'Microsoft Visual Studio Code'
+            title: 'Microsoft Visual Studio Code',
+            tags: ['Code']
         }),
         'Arduino IDE': '',
         Blender: '2.5 - 5.2, Fracture Modifier Build',
@@ -24,12 +26,29 @@ window.addEventListener('load', function(){
         FreeCAD: '',
         'Fusion': new SkillCard({
             title: 'Autodesk Fusion',
-            description: ''
+            description: '',
+            tags: ['3D']
         }),
-        PrusaSlicer: '',
-        OrcaSlicer: '',
-        Cura: '',
-        Klipper: '',
+        PrusaSlicer: new SkillCard({
+            title: 'PrusaSlicer',
+            description: '',
+            tags: ['3D']
+        }),
+        OrcaSlicer: new SkillCard({
+            title: 'OrcaSlicer',
+            description: '',
+            tags: ['3D']
+        }),
+        Cura: new SkillCard({
+            title: 'Ultimaker Cura',
+            description: '',
+            tags: ['3D']
+        }),
+        Klipper: new SkillCard({
+            title: 'Klipper',
+            description: '',
+            tags: ['3D']
+        }),
         Gimp: '',
         'After Effects': new SkillCard({
             title: 'Adobe After Effects',
@@ -43,8 +62,16 @@ window.addEventListener('load', function(){
             title: 'Adobe Photoshop',
             description: 'CS5 - CC'
         }),
-        Javascript: '',
-        HTML: '',
+        Javascript: new SkillCard({
+            title: 'Javascript',
+            description: '',
+            tags: ['Code']
+        }),
+        HTML: new SkillCard({
+            title: 'HTML',
+            description: '',
+            tags: ['Code']
+        }),
         CSS: '',
         'C#': '',
         Java: '',
@@ -52,15 +79,8 @@ window.addEventListener('load', function(){
         Haskell: '',
         'C/C++': ''
     }
-    for (let key in skills) {
-        //Convenient for skills where key matches title
-        if (typeof skills[key] === 'string') {
-            skills[key] = new SkillCard({
-                title: key,
-                description: skills[key]
-            });
-        }
-    }
+    cardify_dict(skills, SkillCard);
+    
     portfolio = [
         new MediaCard({
             title: 'Symbiosis',
@@ -129,8 +149,20 @@ window.addEventListener('load', function(){
     
     
     for (let key in skills) {
-        skills[key].render(skillContainer, 'skill-card-' + key);
-        skills[key].key = key; //TODO: Is this really how we wanna do things?
+        skill = skills[key];
+
+        for (let tag of skill.tags) {
+            if (!tags[tag]) {
+                tags[tag] = new SkillCard({
+                    title: tag,
+                    description: ''
+                });
+            }
+            tags[tag].add_card(skill);
+        }
+
+        skill.render(skillContainer, 'skill-card-' + key);
+        skill.key = key; //TODO: Is this really how we wanna do things?
     }
     
     for (let i in portfolio) {
