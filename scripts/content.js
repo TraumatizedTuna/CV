@@ -3,6 +3,9 @@ const portfolioContainer = document.getElementById('portfolio');
 let tags = {}
 let skills, portfolio;
 
+const warn_adobe =
+`Adobe is a predatory company that buys out its competition, seemingly in order to charge more while neglecting performance and stability. Adobe Creative Cloud displays some clear characteristics of malware, such as, refusing to disable startup processes, compromising system performance and stability and resisting uninstall.`;
+
 window.addEventListener('load', function(){
 
     skills = {
@@ -27,7 +30,8 @@ window.addEventListener('load', function(){
         'Fusion': new SkillCard({
             title: 'Autodesk Fusion',
             description: '',
-            tags: ['3D']
+            tags: ['3D', 'CAD'],
+            warning: `Autodesk actively violates users' privacy with excessive anti-piracy measures. Fusion resists uninstall.`
         }),
         PrusaSlicer: new SkillCard({
             title: 'PrusaSlicer',
@@ -52,15 +56,21 @@ window.addEventListener('load', function(){
         Gimp: '',
         'After Effects': new SkillCard({
             title: 'Adobe After Effects',
-            description: 'CS5 - CC'
+            description: 'CS5 - CC',
+            tags: ['Adobe'],
+            warning: warn_adobe
         }),
         'Premiere Pro': new SkillCard({
             title: 'Adobe Premiere Pro',
-            description: 'CS5 - CC'
+            description: 'CS5 - CC',
+            tags: ['Adobe'],
+            warning: warn_adobe
         }),
         Photoshop: new SkillCard({
             title: 'Adobe Photoshop',
-            description: 'CS5 - CC'
+            description: 'CS5 - CC',
+            tags: ['Adobe'],
+            warning: warn_adobe
         }),
         Javascript: new SkillCard({
             title: 'Javascript',
@@ -161,7 +171,7 @@ window.addEventListener('load', function(){
             tags[tag].add_card(skill);
         }
 
-        skill.render(skillContainer, 'skill-card-' + key);
+        skill.render(skillContainer, `skill-card-${key}`.toPrettySelector());
         skill.key = key; //TODO: Is this really how we wanna do things?
     }
     

@@ -6,7 +6,9 @@ class Card {
         this.title = args.title;
         this.description = args.description || '';
         this.content = args.content || '';
+        this.tags = args.tags || [];
         this.cards = [];
+        if (args.warning) this.warning = args.warning;
     }
     /**
      * Render card in container.
@@ -16,14 +18,27 @@ class Card {
      */
     render(container, id, classes = '') {
         container.insertAdjacentHTML('beforeend',
-            '<div class="card' + classes + '" id="' + id + '"> ' +
-            '   <div class="card-title">' + this.title + '</div>' +
-            '   <div class="card-description">' + this.description + '</div>' +
-            '   <div class="card-content">' + this.content + '</div>' +
-            '</div>'
+            `<div class="card${classes}" id="${id}">
+            <div class="card-title">${this.title}</div>
+            <div class="card-description">${this.description}</div>
+            <div class="card-content">${this.content}</div>
+            </div>`
         );
+
+
         this.html = document.getElementById(id);
         this.html.card = this;
+
+        if (this.warning) {
+            this.html.insertAdjacentHTML('afterbegin',
+                `<div class="info-sign warning">!</div>`
+            );
+
+            // Add event to display warning on click
+            this.html.getElementsByClassName('warning')[0].addEventListener('click', function () {
+                show_warning(this.parentNode.card);
+            })
+        }
     }
     hide() { this.html.classList.add('hidden'); }
     show() { this.html.classList.remove('hidden'); }
@@ -52,7 +67,8 @@ class SkillCard extends Card {
      * Toggle selected state of skill card and filter portfolio accordingly.
      */
     toggle_selected() {
-        if(this.cards.length) {
+        if (this.cards.length) {
+            hide_warning();
             if (this.html.classList.contains('selected')) {
                 this.html.classList.remove('selected');
                 for (let mCard of portfolio) {
@@ -63,6 +79,7 @@ class SkillCard extends Card {
                 //Deselect currently selected
                 document.getElementsByClassName('selected')[0]?.classList?.remove('selected');
                 this.html.classList.add('selected');
+
                 window.location.hash = encodeURIComponent(this.key)
                 for (let mCard of portfolio) {
                     mCard.hide();
@@ -70,6 +87,7 @@ class SkillCard extends Card {
                 for (let mCard of this.cards) {
                     mCard.show();
                 }
+                show_warning(this)
             }
         }
     }
@@ -83,7 +101,7 @@ class SkillCard extends Card {
     }
 }
 /**
- * Class representing media card (for portfolio)
+ * Class representing a media card.
  */
 class MediaCard extends Card {
     constructor(args) {
@@ -120,4 +138,19 @@ function cardify_dict(dict, card_class) {
             });
         }
     }
+}
+
+
+function show_warning(card) {
+    if (card.warning) {
+        const output_el = document.getElementById("output");
+        output_el.classList.remove('hidden');
+        output_el.classList.add('selected');
+        output_el.innerHTML = `<div class="info-sign warning">!</div><div class="card-content">${card.warning}</div>`;
+    }
+}
+
+function hide_warning() {
+    const output_el = document.getElementById("output");
+    output_el.classList.add('hidden');
 }
