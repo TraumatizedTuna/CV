@@ -4,7 +4,7 @@ let tags = {}
 let skills, portfolio;
 
 const warn_adobe =
-`Adobe is a predatory company that buys out its competition, seemingly in order to charge more while neglecting performance and stability. Adobe Creative Cloud displays some clear characteristics of malware, such as, refusing to disable startup processes, compromising system performance and stability and resisting uninstall.`;
+`Adobe is a predatory company that buys out its competition, seemingly in order to charge more while neglecting performance and stability. Adobe Creative Cloud displays some clear characteristics of malware, such as refusing to disable startup processes, compromising system performance and stability and resisting uninstall.`;
 
 window.addEventListener('load', function(){
 
